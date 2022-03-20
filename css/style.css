@@ -61,6 +61,11 @@ label{
 
 }
 
+.exibeResultados{
+  margin: auto;
+  width: 100%;
+}
+
 /* CSS botão */
 .calculaBMG {
     box-shadow: 0px 10px 14px -7px #af490e;
