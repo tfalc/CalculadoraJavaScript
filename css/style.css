@@ -44,7 +44,7 @@ label{
 
 .exibeResultados {
     margin: auto;
-    width: 80%;
+    width: 100%;
 }
 
 #percentFlex{
@@ -59,11 +59,6 @@ label{
     border: solid 1px #db611d;
     padding: 4px 3px;
 
-}
-
-.exibeResultados{
-  margin: auto;
-  width: 100%;
 }
 
 /* CSS botão */
