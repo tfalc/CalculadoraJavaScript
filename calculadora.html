@@ -7,44 +7,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora BMG</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/scripts.js" defer></script>
 </head>
 
 <body>
     <div class="everyBody">
         <div class="formularioCalculo">
-            <div class="tituloFormulario">
-                <div class="inputLabel" id="valorRisco">
-                    <label for="tituloLabel">Valor em Risco</label>
-                    <input type="text">
-                </div>
-                <div class="inputLabel" id="comissao">
-                    <label for="tituloLabel">Comissão</label>
-                    <div id="percentFlex">
-                        <span class="currency">%</span>
-                        <input type="text" placeholder="Digite o valor da comissão" access="false" value="20"
-                            maxlength="2" id="comissaoLabel" title="Digite apenas números">
+            <form action="">
+                <div class="tituloFormulario">
+                    <div class="inputLabel">
+                        <div class="form-group row">
+                            <div class="col-8">
+                                <label for="tituloLabel">Valor em Risco</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fa fa-percent"></i>
+                                        </div>
+                                    </div>
+                                    <input id="valorRisco" name="text" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="inputLabel" id="premioNet">
-                    <label for="tituloLabel">Prêmio Net</label>
-                    <input type="text" id="premioNetInput" disabled>
-                </div>
-                <div class="inputLabel" id="taxaNet">
-                    <label for="tituloLabel">Taxa Net</label>
-                    <input type="text" id="taxaNetInput" disabled>
-                </div>
-                <div class="inputLabel" id="premioLiquido">
-                    <label for="tituloLabel">Prêmio Liquido</label>
-                    <input type="text" id="premioLiquidoInput" disabled>
-                </div>
-                <div class="inputLabel" id="premioTotal">
-                    <label for="tituloLabel">Prêmio Total</label>
-                    <input type="text" id="premioTotalInput" disabled>
-                </div>
+                    <div class="inputLabel">
+                        <div class="form-group row">
+                            <div class="col-8">
+                                <label for="tituloLabel">Comissão</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fa fa-percent"></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" access="false" value="20" maxlength="2" id="comissaoLabel"
+                                        class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inputLabel" id="premioNet">
+                        <label for="tituloLabel">Prêmio Net</label>
+                        <input type="number" id="premioNetInput" min="1" step="any" disabled>
+                    </div>
+                    <div class="inputLabel" id="taxaNet">
+                        <label for="tituloLabel">Taxa Net</label>
+                        <input type="number" id="taxaNetInput" min="1" step="any" disabled>
+                    </div>
+                    <div class="inputLabel" id="premioLiquido">
+                        <label for="tituloLabel">Prêmio Liquido</label>
+                        <input type="number" id="premioLiquidoInput" min="1" step="any" disabled>
+                    </div>
+                    <div class="inputLabel" id="premioTotal">
+                        <label for="tituloLabel">Prêmio Total</label>
+                        <input type="number" id="premioTotalInput" min="1" step="any" disabled>
+                    </div>
 
-                <button class="calculaBMG" id="botaoBMG">Calcular</button>
-            </div>
+                    <input class="calculaBMG" id="botaoBMG" type="submit" value="Calcular">
+                </div>
+            </form>
         </div>
         <div class="exibeResultados">
             <div>
@@ -65,18 +88,20 @@
                     <div class="divTableBody">
                         <div class="divTableRow">
                             <div class="divTableCell" id="valorCodigo">0</div>
-                            <div class="divTableCell" id="valorCobertura">0</div>
+                            <div class="divTableCell" id="valorCobertura"></div>
                             <div class="divTableCell" id="valorLMI">0</div>
                             <div class="divTableCell" id="valorTaxaNet">0</div>
                             <div class="divTableCell" id="valorPremioNet">0</div>
-                            <div class="divTableCell" id="valorPremioLiquidoMinimo">400</div>
+                            <div class="divTableCell" id="valorPremioLiquidoMinimo">0</div>
                             <div class="divTableCell" id="valorPremioCalculado">0</div>
                             <div class="divTableCell" id="valorPremioLiquido">0</div>
-                            <div class="divTableCell" id="valorFranquia">0</div>
+                            <div class="divTableCell" id="valorFranquia"></div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
 </body>
 
 </html>
