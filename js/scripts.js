@@ -20,21 +20,19 @@ btn.addEventListener("click", function (e) {
 
 	let taxaNetDivCalculo = 1.3 * 0.8;
 
-	premioNetCalculado = (Math.round(((valorRisco * (comissao / 100) * taxaNetDivCalculo) / 100) * 100) / 100).toFixed(2);
-	premioCalculado = (Math.round(premioNetCalculado / (1 - (comissao / 100)) * 100) / 100).toFixed(2);
+	premioNetCalculado = (Math.round(((valorRisco * (comissao / 100) * taxaNetDivCalculo) / 100) * 100) / 100);
+	premioCalculado = (Math.round(premioNetCalculado / (1 - (comissao / 100)) * 100) / 100);
 	let taxaNetInput = ((premioNetCalculado / valorRisco) * 100).toFixed(4);
-	let premioTotal = (Math.round((premioCalculado * 1.0738) * 100) / 100).toFixed(2);
-	lmi = (Math.round(valorRisco * (comissao / 100))).toFixed(2);
+	let premioTotal = (Math.round((premioCalculado * 1.0738) * 100) / 100);
+	lmi = (Math.round(valorRisco * (comissao / 100)));
 
 	/* inserção dos valores no formulário */
-	document.getElementById("premioNetInput").value = premioNetCalculado; /* Atualiza input Prêmio Net*/
-	document.getElementById("taxaNetInput").value = taxaNetInput; /* Atualiza input Taxa Net */
-	document.getElementById("premioLiquidoInput").value = premioCalculado; /* Atualiza o input Prêmio Líquido */
-	document.getElementById("premioTotalInput").value = premioTotal; /* Atualiza input Prêmio total*/
+	document.getElementById("premioNetInput").value = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(premioNetCalculado); /* Atualiza input Prêmio Net*/
+	document.getElementById("taxaNetInput").value = taxaNetInput + '%'; /* Atualiza input Taxa Net */
+	document.getElementById("premioLiquidoInput").value = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(premioCalculado); /* Atualiza o input Prêmio Líquido */
+	document.getElementById("premioTotalInput").value = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(premioTotal); /* Atualiza input Prêmio total*/
 
 	/* inserção dos valores na tabela*/
-
-	console.log(new Intl.NumberFormat().format(premioNetCalculado));
 
 	valorLmi.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(lmi);  /* Atualiza a div LMI com o valor do cálculo */
 	taxaNetDiv.innerHTML = taxaNetDivCalculo + "%"; /* Atualiza div Taxa Net*/
@@ -43,7 +41,3 @@ btn.addEventListener("click", function (e) {
 	premioLiquido.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(premioCalculado); /* Atualiza div Prêmio Líquido */	
 	valorLiquidoMinimo.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(400); /* Atualiza div Prêmio Líquido */	
 });
-
-function setTwoNumberDecimal(el) {
-	el.value = parseFloat(el.value).toFixed(2);
-};
